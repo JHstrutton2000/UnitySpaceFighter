@@ -70,6 +70,7 @@ public class ThrustControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GameObject bullet = Instantiate(bulletPrefab, player.transform.position, player.transform.rotation);
+                bullet.transform.position += new Vector3(-1, 0, 0);
                 bullet.GetComponent<DestroyBullet>().ship = gameObject;
 
                 bullet.GetComponent<Rigidbody>().rotation = player.transform.rotation;
